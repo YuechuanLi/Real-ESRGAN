@@ -226,6 +226,11 @@ wget https://github.com/xinntao/Real-ESRGAN/releases/download/v0.2.2.4/RealESRGA
 python inference_realesrgan.py -n RealESRGAN_x4plus_anime_6B -i inputs
 ```
 
+```bash
+# 2x speed inference
+python inference_realesrgan.py -n realesr-animevideov3 -s 2 -i inputs
+```
+
 Results are in the `results` folder
 
 ---
