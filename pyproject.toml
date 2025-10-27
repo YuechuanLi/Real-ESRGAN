@@ -1,0 +1,82 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "realesrgan"
+dynamic = ["version"]
+description = "Real-ESRGAN aims at developing Practical Algorithms for General Image Restoration"
+readme = "README.md"
+requires-python = ">=3.12"
+license = {text = "BSD-3-Clause"}
+authors = [
+    {name = "Xintao Wang", email = "xintao.wang@outlook.com"}
+]
+keywords = [
+    "computer vision",
+    "pytorch",
+    "image restoration",
+    "super-resolution",
+    "esrgan",
+    "real-esrgan"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "License :: OSI Approved :: BSD License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+]
+
+dependencies = [
+    "basicsr>=1.4.2",
+    "facexlib>=0.2.5",
+    "gfpgan>=1.3.5",
+    "numpy",
+    "opencv-python",
+    "Pillow",
+    "torch>=1.7",
+    "torchvision",
+    "tqdm",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "flake8",
+    "yapf",
+    "isort",
+]
+
+[project.urls]
+Homepage = "https://github.com/xinntao/Real-ESRGAN"
+Repository = "https://github.com/xinntao/Real-ESRGAN"
+Issues = "https://github.com/xinntao/Real-ESRGAN/issues"
+
+[tool.setuptools]
+packages = ["realesrgan"]
+include-package-data = true
+
+[tool.setuptools.dynamic]
+version = {file = "VERSION"}
+
+[tool.setuptools.package-data]
+realesrgan = ["*.py"]
+
+# Dependency groups (modern uv syntax)
+[dependency-groups]
+dev = [
+    "pytest>=7.0.0",
+    "flake8>=5.0.0",
+    "yapf>=0.32.0",
+    "isort>=5.12.0",
+]
+
+[tool.isort]
+profile = "black"
+line_length = 120
+skip_gitignore = true
+
+[tool.yapf]
+based_on_style = "pep8"
+column_limit = 120
